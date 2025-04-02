@@ -5,7 +5,7 @@ export default () => {
   const ref = useRef(null);
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref?.current) {
       mount(ref.current);
     }
   }, []);
