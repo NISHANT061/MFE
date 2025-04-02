@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: echo "PRODUCTION_DOMAIN is $PRODUCTION_DOMAIN"
-      - run: echo "AWS_S3_BUCKET_NAME is $AWS_S3_BUCKET_NAME"
+      - run: echo "AWS_S3_BUCKET_NAME is ${{ secrets.AWS_S3_BUCKET_NAME }}"
       - run: npm run build 
         env: 
           PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
