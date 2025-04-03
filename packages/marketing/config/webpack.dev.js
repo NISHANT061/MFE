@@ -1,16 +1,16 @@
 const { merge } = require('webpack-merge');
 const ModuleFedarationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common');
-const packageJson = require('../package.json')
+const packageJson = require('../package.json');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const devConfig = {
     mode: 'development',
     devServer: {
         port: 8081,
-        historyApiFallback: {
-            index: 'index.html'
-        }
+        historyApiFallback: true
     },
     plugins: [
         new ModuleFedarationPlugin({
